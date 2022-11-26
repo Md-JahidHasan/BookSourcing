@@ -1,0 +1,78 @@
+[
+    {
+        "category": "Fiction",
+        "bookName": "Beloved",
+        "writer": "Toni Morrison",
+        "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsO9Jt2giCBHsnqZP9hHUX1rRR3yC0pXbxmg&usqp=CAU",
+        "location": "Puran Dhaka",
+        "resalePrice": "250",
+        "originalPrice": "720",
+        "yearsOfUse": "2",
+        "postingTime": "24 Nov,2022",
+        "sellersName": "Dipok Roy",
+        "sellersEmail": "dipok@roy.com"
+    },
+    {
+        "category": "Non-Fiction",
+        "bookName": "A Brief History of Time",
+        "writer": "Stephen Hawking",
+        "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQho3INNJBWFrl3sOQIPa9Z6K9BtyxJH_qx3w&usqp=CAU",
+        "location": "Badda",
+        "resalePrice": "340",
+        "originalPrice": "820",
+        "yearsOfUse": "1",
+        "postingTime": "22 Nov,2022",
+        "sellersName": "Jamil Ahmed",
+        "sellersEmail": "jamil@ahmed.com"
+    },
+    {
+        "category": "Fiction",
+        "bookName": "Long Shadows",
+        "writer": "David Baldacci",
+        "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZMsvw9ev6CUlxHRNujGuagPgAssmySsg9kQ&usqp=CAU",
+        "location": "Puran Dhaka",
+        "resalePrice": "250",
+        "originalPrice": "720",
+        "yearsOfUse": "2",
+        "postingTime": "24 Nov,2022",
+        "sellersName": "Dipok Roy",
+        "sellersEmail": "dipok@roy.com"
+    },
+    {
+        "category": "Non-Fiction",
+        "bookName": "Out of Africa",
+        "writer": "Karen Blixen",
+        "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsO9Jt2giCBHsnqZP9hHUX1rRR3yC0pXbxmg&usqp=CAU",
+        "location": "Puran Dhaka",
+        "resalePrice": "250",
+        "originalPrice": "720",
+        "yearsOfUse": "2",
+        "postingTime": "24 Nov,2022",
+        "sellersName": "Dipok Roy",
+        "sellersEmail": "dipok@roy.com"
+    },
+    {
+        "category": "Novel",
+        "bookName": "Teeth Orthodontics",
+        "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsO9Jt2giCBHsnqZP9hHUX1rRR3yC0pXbxmg&usqp=CAU",
+        "location": "Puran Dhaka",
+        "resalePrice": "250",
+        "originalPrice": "720",
+        "yearsOfUse": "2",
+        "postingTime": "24 Nov,2022",
+        "sellersName": "Jamil Ahmed",
+        "sellersEmail": "jamil@ahmed.com"
+    },
+    {
+        "category": "Fiction",
+        "bookName": "Teeth Orthodontics",
+        "bookImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsO9Jt2giCBHsnqZP9hHUX1rRR3yC0pXbxmg&usqp=CAU",
+        "location": "Puran Dhaka",
+        "resalePrice": "250",
+        "originalPrice": "720",
+        "yearsOfUse": "2",
+        "postingTime": "24 Nov,2022",
+        "sellersName": "Dipok Roy",
+        "sellersEmail": "dipok@roy.com"
+    }
+]
