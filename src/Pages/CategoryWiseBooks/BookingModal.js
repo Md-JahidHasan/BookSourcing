@@ -18,6 +18,7 @@ const BookingModal = ({ refetch, modalOpen, setModalOpen }) => {
     const buyerEmail = user?.email;
     const phone = form.phone.value;
     const location = form.location.value;
+    const img = modalOpen.bookImage;
     const bookedOrder = {
       productId,
       productName,
@@ -26,6 +27,7 @@ const BookingModal = ({ refetch, modalOpen, setModalOpen }) => {
       buyerEmail,
       phone,
       location,
+      img
     }
 
     fetch(`http://localhost:8000/bookingOrder`, {
