@@ -34,23 +34,39 @@ const BookingModal = ({ refetch, modalOpen }) => {
             <input
               name="name"
               type="text"
-              defaultValue={user?.displayName}
+              defaultValue={`Name: ${user?.displayName}`}
               disabled
               placeholder="Full Name"
-              className="input input-bordered input-primary w-full mt-2"
+              className="input input-bordered input-primary w-1/2 mt-2 "
             />
 
             <input
               name="email"
-              defaultValue={user?.email}
+              defaultValue={`Email: ${user?.email}`}
               disabled
               type="email"
               placeholder="Email"
-              className="input input-bordered input-primary w-full mt-2"
+              className="input input-bordered input-primary w-1/2 mt-2"
             />
             <input
               name="bookName"
-              defaultValue={modalOpen?.bookName}
+              defaultValue={`Books Name: ${modalOpen?.bookName}`}
+              disabled
+              type="text"
+              placeholder=""
+              className="input input-bordered input-primary w-full mt-2"
+            />
+            <input
+              name="price"
+              defaultValue={`Price: ${modalOpen?.resalePrice} tk`}
+              disabled
+              type="text"
+              placeholder=""
+              className="input input-bordered input-primary w-full mt-2"
+            />
+            <input
+              name="price"
+              defaultValue={`Price: ${modalOpen?.resalePrice} tk`}
               disabled
               type="text"
               placeholder=""
