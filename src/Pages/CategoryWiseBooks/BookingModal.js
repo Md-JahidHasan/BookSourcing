@@ -53,7 +53,15 @@ const BookingModal = ({ refetch, modalOpen }) => {
               defaultValue={modalOpen?.bookName}
               disabled
               type="text"
-              placeholder="Email"
+              placeholder=""
+              className="input input-bordered input-primary w-full mt-2"
+            />
+            <input
+              name="price"
+              defaultValue={`Price: ${modalOpen?.resalePrice} tk`}
+              disabled
+              type="text"
+              placeholder=""
               className="input input-bordered input-primary w-full mt-2"
             />
             <input

@@ -6,6 +6,8 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
     const {register,formState:{errors} , handleSubmit} = useForm();
+    const [seller, setSeller] = useState(false);
+    // console.log(seller);
     const { creatUser, updateUser } = useContext(AuthContext);
     const navigte = useNavigate()
     const handleSignUp = (data)=>{
@@ -20,7 +22,7 @@ const SignUp = () => {
             }
             updateUser(userInfo)
             .then(()=>{
-                handleUserData(data.name, data.email) 
+                handleUserData(data.name, data.email, seller) 
             })
             .catch((error)=>{
                 console.error(error);
@@ -31,8 +33,12 @@ const SignUp = () => {
         })
     }
 
-    const handleUserData =(name, email)=>{
-        const user = {name, email};
+    const handleUserData =(name, email, seller)=>{
+        const user = {
+            name,
+            email,
+            seller
+        };
         fetch('http://localhost:8000/users', {
             method: 'POST',
             headers:{
@@ -48,7 +54,7 @@ const SignUp = () => {
     }
 
     const getUsertoken = (email) =>{
-        fetch(`http://localhost:5000/jwt?email=${email}`)
+        fetch(`http://localhost:8000/jwt?email=${email}`)
         .then(res=>res.json())
         .then(data=>{
             if (data.accessToken){
@@ -96,6 +102,13 @@ const SignUp = () => {
                         
                         )} type="password" className="input input-bordered input-primary w-full" />
                         {errors.password && <p className='text-red-500' role="alert">{errors.password?.message}</p>}
+                    </div>
+
+                    <div className="form-control">
+                        <label className="flex items-center cursor-pointer">
+                            <input type="checkbox" onChange={(event)=>setSeller(event.target.checked)}  className="checkbox checkbox-primary m-2" />
+                            <span className="label-text">Create account as seller</span>
+                        </label>
                     </div>
 
                     <input className='btn btn-primary w-full mt-2 text-slate-50' type="submit" value='Sign Up'/>

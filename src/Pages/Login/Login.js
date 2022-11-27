@@ -18,7 +18,7 @@ const Login = () => {
         .then(result=>{
             const user= result.user;
             getAccessToken(data.email)
-            console.log('Logged',user);
+            // console.log('Logged',user);
             navigate(from, { replace: true })
         })
         .catch(error=>{
@@ -27,7 +27,7 @@ const Login = () => {
         })
     }
     const getAccessToken = (email)=>{
-        fetch(`http://localhost:5000/jwt?email=${email}`)
+        fetch(`http://localhost:8000/jwt?email=${email}`)
         .then(res=>res.json())
         .then(data=>{
             // console.log(data);
