@@ -3,7 +3,7 @@ import BookingModal from './BookingModal';
 
 
 const CategoryBookscard = ({book, setModalOpen}) => {
-    console.log(book);
+    // console.log(book);
     return (
         <div className="hero m-4 bg-violet-200 shadow-xl">
             <div className="hero-content flex-col lg:flex-row">

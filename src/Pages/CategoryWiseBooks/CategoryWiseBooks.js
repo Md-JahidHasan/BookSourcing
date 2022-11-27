@@ -11,6 +11,7 @@ const CategoryWiseBooks = () => {
         <div className='grid grid-cols-2 gap-2 mx-auto'>
             {
                 books.map(book => <CategoryBookscard
+                key={book._id}
                 book={book}
                 setModalOpen={setModalOpen}
                 ></CategoryBookscard>)

@@ -4,16 +4,46 @@ import { json } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 
-const BookingModal = ({ refetch, modalOpen }) => {
+const BookingModal = ({ refetch, modalOpen, setModalOpen }) => {
   // const { name, slots, price } = treatment;
   const {user} = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
-    
+    const productId = modalOpen._id;
+    const productName = modalOpen.bookName;
+    const productPrice = modalOpen.resalePrice;
+    const buyerName = user?.displayName;
+    const buyerEmail = user?.email;
+    const phone = form.phone.value;
+    const location = form.location.value;
+    const bookedOrder = {
+      productId,
+      productName,
+      productPrice,
+      buyerName,
+      buyerEmail,
+      phone,
+      location,
+    }
+
+    fetch(`http://localhost:8000/bookingOrder`, {
+      method: 'POST',
+      headers:{
+        'content-type':'application/json'
+      },
+      body: JSON.stringify(bookedOrder)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      if (data.acknowledged === true){
+        toast.success('Your order is Booked!')
+        setModalOpen({open:false})
+      }
+    })
     };
-    console.log({modalOpen});
+
   return (
     <>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -29,15 +59,13 @@ const BookingModal = ({ refetch, modalOpen }) => {
           <form onSubmit={handleSubmit}>
             
 
-            
-
             <input
               name="name"
               type="text"
               defaultValue={`Name: ${user?.displayName}`}
               disabled
               placeholder="Full Name"
-              className="input input-bordered input-primary w-1/2 mt-2 "
+              className="input input-bordered input-primary w-full mt-2 "
             />
 
             <input
@@ -46,8 +74,9 @@ const BookingModal = ({ refetch, modalOpen }) => {
               disabled
               type="email"
               placeholder="Email"
-              className="input input-bordered input-primary w-1/2 mt-2"
+              className="input input-bordered input-primary w-full mt-2"
             />
+
             <input
               name="bookName"
               defaultValue={`Books Name: ${modalOpen?.bookName}`}
@@ -56,6 +85,7 @@ const BookingModal = ({ refetch, modalOpen }) => {
               placeholder=""
               className="input input-bordered input-primary w-full mt-2"
             />
+
             <input
               name="price"
               defaultValue={`Price: ${modalOpen?.resalePrice} tk`}
@@ -64,22 +94,23 @@ const BookingModal = ({ refetch, modalOpen }) => {
               placeholder=""
               className="input input-bordered input-primary w-full mt-2"
             />
+
             <input
-              name="price"
-              defaultValue={`Price: ${modalOpen?.resalePrice} tk`}
-              disabled
+              name="phone"
+              required
               type="text"
-              placeholder=""
+              placeholder="Give Your Phone Number"
               className="input input-bordered input-primary w-full mt-2"
             />
+
             <input
-              name="price"
-              defaultValue={`Price: ${modalOpen?.resalePrice} tk`}
-              disabled
+              name="location"
+              required
               type="text"
-              placeholder=""
+              placeholder="Enter Meeting Location"
               className="input input-bordered input-primary w-full mt-2"
             />
+
             <input
               type="submit"
               className="input btn-primary input-primary w-full mt-2"
