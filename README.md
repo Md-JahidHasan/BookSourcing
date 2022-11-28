@@ -1,3 +1,16 @@
+# Live Link Of Website:
+
+# Admin Info: 
+- email: dipok@roy.com
+- password: asdasd
+
+# Features Of the website
+- It is a used book selling and buying website
+- It is authenticated and authorised
+- Any body can create seller account in this website
+- Seller can post for selling books
+- Any body can buy books
+- Admin can make admin any user
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

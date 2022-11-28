@@ -13,6 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <CategoryCards></CategoryCards>
             <ContactUs></ContactUs>
+            
         </div>
     );
 };

@@ -135,6 +135,9 @@ const AddAProduct = () => {
                     <option>Fiction</option>
                     <option>Non-Fiction</option>
                     <option>Novel</option>
+                    <option>Fantasy</option>
+                    <option>Historical fiction</option>
+                    <option>Horror</option>
                 </select>
 
                 <input
