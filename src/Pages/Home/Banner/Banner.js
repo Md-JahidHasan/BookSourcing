@@ -21,7 +21,7 @@ const Banner = () => {
                     
                 </div>
                 <div className='w-1/2'>
-                <h1 className="text-5xl font-bold">Get Your Book At Cheapest Rate Here & Sell Your Old Book!</h1>
+                <h1 className="text-5xl font-bold text-primary">Get Your Book At Cheapest Rate Here & Sell Your Old Book!</h1>
                 <p className="py-6">The largest used book buying and selling wbsite.</p>
                     <Link to='/signup'><ButtonPrimary>Create Account as Seller</ButtonPrimary></Link>
                 </div>
