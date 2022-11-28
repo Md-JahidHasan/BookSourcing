@@ -50,7 +50,7 @@ const AddAProduct = () => {
                 usedTime,
                 description
             }
-            fetch(`http://localhost:8000/bookPost`, {
+            fetch(`https://twelfth-assignment-server.vercel.app/bookPost`, {
                 method:'POST',
                 headers:{
                     'content-type':'application/json'

@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             {
                 path:'/category/:name',
                 element:<CategoryWiseBooks></CategoryWiseBooks>,
-                loader: ({params}) => fetch(`http://localhost:8000/category/${params.name}`)
+                loader: ({params}) => fetch(`https://twelfth-assignment-server.vercel.app/category/${params.name}`)
             }
         ]
     },

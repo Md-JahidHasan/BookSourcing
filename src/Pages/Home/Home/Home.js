@@ -8,7 +8,7 @@ import LastBanner from '../LastBanner/LastBanner';
 
 const Home = () => {
     return (
-        <div className='px-5'>
+        <div className=''>
             <FirstBanner></FirstBanner>
             <Banner></Banner>
             <CategoryCards></CategoryCards>

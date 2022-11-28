@@ -30,7 +30,7 @@ const BookingModal = ({ refetch, modalOpen, setModalOpen }) => {
       img
     }
 
-    fetch(`http://localhost:8000/bookingOrder`, {
+    fetch(`https://twelfth-assignment-server.vercel.app/bookingOrder`, {
       method: 'POST',
       headers:{
         'content-type':'application/json'

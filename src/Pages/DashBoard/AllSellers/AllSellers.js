@@ -5,7 +5,7 @@ const AllSellers = () => {
     const {data: sellers=[], refetch} = useQuery({
         queryKey:['sellers'],
         queryFn: async()=>{
-            const res = await fetch(`http://localhost:8000/allSellers`);
+            const res = await fetch(`https://twelfth-assignment-server.vercel.app/allSellers`);
             const data = await res.json();
             return data
         }

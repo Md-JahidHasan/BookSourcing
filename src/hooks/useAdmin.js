@@ -5,7 +5,7 @@ const useAdmin = email =>{
     const [isAdminloading, setIsAdminLoading] = useState(true)
     useEffect(()=>{
         if(email){
-            fetch(`http://localhost:8000/allusers/admin/${email}`)
+            fetch(`https://twelfth-assignment-server.vercel.app/allusers/admin/${email}`)
             .then(res=>res.json())
             .then(data=>{
                 // console.log(data);

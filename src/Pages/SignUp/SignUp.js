@@ -39,7 +39,7 @@ const SignUp = () => {
             email,
             seller
         };
-        fetch('http://localhost:8000/users', {
+        fetch('https://twelfth-assignment-server.vercel.app/users', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -54,7 +54,7 @@ const SignUp = () => {
     }
 
     const getUsertoken = (email) =>{
-        fetch(`http://localhost:8000/jwt?email=${email}`)
+        fetch(`https://twelfth-assignment-server.vercel.app/jwt?email=${email}`)
         .then(res=>res.json())
         .then(data=>{
             if (data.accessToken){

@@ -6,7 +6,7 @@ const CategoryCards = () => {
     const { data: bookCategories = [], refetch, isLoading } = useQuery({
         queryKey: ['appointmentOptions'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:8000/category`,)
+            const res = await fetch(`https://twelfth-assignment-server.vercel.app/category`,)
             const data = await res.json();
             return data;
         }
