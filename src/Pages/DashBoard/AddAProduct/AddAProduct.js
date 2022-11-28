@@ -10,7 +10,7 @@ const AddAProduct = () => {
         event.preventDefault();
         const form = event.target;
         const sellerName = user?.displayName;
-        const sellerEmail = user?.email;
+        const sellersEmail = user?.email;
         const sellerPhone = form.phone.value;
         const sellerLocation = form.location.value;
         const bookName = form.bookName.value;
@@ -37,7 +37,7 @@ const AddAProduct = () => {
             console.log(data)
             const postDetail = {
                 sellerName,
-                sellerEmail,
+                sellersEmail,
                 sellerPhone,
                 sellerLocation,
                 bookName,

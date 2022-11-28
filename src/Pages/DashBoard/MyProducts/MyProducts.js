@@ -1,6 +1,19 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const MyProducts = () => {
+    const {user} = useContext(AuthContext);
+
+    const {data:products=[], refetch} = useQuery({
+        queryKey:['sellersProduct'],
+        queryFn: async()=>{
+            const res =await fetch(`http://localhost:8000/bookpost/seller/${user?.email}`)
+            const data =await res.json();
+            return data
+        }
+    })
+    console.log(products);
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -8,11 +21,6 @@ const MyProducts = () => {
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
                             <th>Name</th>
                             <th>Job</th>
                             <th>Favorite Color</th>
@@ -21,35 +29,34 @@ const MyProducts = () => {
                     </thead>
                     <tbody>
                         {/* <!-- row 1 --> */}
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                        {
+                            products.map(product => <tr
+                            key={product._id}
+                            >
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-16 h-16">
+                                                <img src={product.bookImage} alt="Avatar Tailwind CSS Component" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">{product.bookName}</div>
+                                            <div className="text-sm opacity-50">By {product.writer}</div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                            </td>
-                            <td>Purple</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                            </th>
-                        </tr>
+                                </td>
+                                <td>
+                                    Book Category: {product.category}
+                                    <br />
+                                    <span className="badge badge-ghost badge-sm">Condition: {product.bookCondition}</span>
+                                </td>
+                                <td>Purple</td>
+                                <th>
+                                    <button className="btn bg-red-500 btn-xs">Delete</button>
+                                </th>
+                            </tr>)
+                        }
 
                     </tbody>
 
