@@ -13,7 +13,7 @@ const MyOrders = () => {
             return data
         }
     }) 
-    // console.log({myOrders});
+    console.log({myOrders});
     return (
         <div>
             <div className="overflow-x-auto w-full">
