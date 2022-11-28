@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Chair from '../../../assets/images/chair.png'
 import ButtonPrimary from '../../../components/ButtonPrimary/ButtonPrimary';
 
@@ -22,7 +23,7 @@ const Banner = () => {
                 <div className='w-1/2'>
                 <h1 className="text-5xl font-bold">Get Your Book At Cheapest Rate Here & Sell Your Old Book!</h1>
                 <p className="py-6">The largest used book buying and selling wbsite.</p>
-                <ButtonPrimary>Get Started</ButtonPrimary>
+                    <Link to='/signup'><ButtonPrimary>Create Account as Seller</ButtonPrimary></Link>
                 </div>
             </div>
         </div>

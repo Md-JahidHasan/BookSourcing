@@ -13,7 +13,7 @@ const CategoryCards = () => {
     })
     return (
         <div className='text-center mt-2 mx-20 '>
-            <h2 className='font-bold text-primary'>Categories of Books</h2>
+            <h2 className='font-bold text-lg text-primary'>Categories of Books</h2>
             <p className='text-3xl mb-4'>Please select your desired category..</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {

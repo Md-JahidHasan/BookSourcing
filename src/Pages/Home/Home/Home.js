@@ -1,8 +1,8 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import ContactUs from '../ContactUs/ContactUs';
 import FirstBanner from '../Firstbanner/FirstBanner';
 import CategoryCards from '../CategoryCards/CategoryCards';
+import LastBanner from '../LastBanner/LastBanner';
 
 
 
@@ -12,7 +12,7 @@ const Home = () => {
             <FirstBanner></FirstBanner>
             <Banner></Banner>
             <CategoryCards></CategoryCards>
-            <ContactUs></ContactUs>
+            <LastBanner></LastBanner>
             
         </div>
     );
