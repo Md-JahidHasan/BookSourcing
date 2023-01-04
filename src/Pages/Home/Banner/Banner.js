@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Chair from '../../../assets/images/chair.png'
 import ButtonPrimary from '../../../components/ButtonPrimary/ButtonPrimary';
 
 const Banner = () => {
