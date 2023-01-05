@@ -28,7 +28,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-primary text-black flex justify-between sticky top-0 z-30">
+        <div className="navbar bg-primary text-white flex justify-between sticky top-0 z-30">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
