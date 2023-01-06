@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import FirstBanner from '../Firstbanner/FirstBanner';
 import CategoryCards from '../CategoryCards/CategoryCards';
 import LastBanner from '../LastBanner/LastBanner';
+import BookPosts from '../BookPosts/BookPosts';
 
 
 
@@ -12,6 +13,7 @@ const Home = () => {
             <FirstBanner></FirstBanner>
             <Banner></Banner>
             <CategoryCards></CategoryCards>
+            <BookPosts></BookPosts>
             <LastBanner></LastBanner>
             
         </div>

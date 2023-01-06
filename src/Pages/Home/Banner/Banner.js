@@ -4,9 +4,9 @@ import ButtonPrimary from '../../../components/ButtonPrimary/ButtonPrimary';
 
 const Banner = () => {
     return (
-        <div className=' bg-gradient-to-r from-secondary to-blue-500 border-t-[10px] border-primary'>
-            <div className="h-14 bg-primary mb-0 flex items-center text-3xl font-bold text-secondary w-4/5 md:w-3/5  m-auto rounded-b-[30px] p-8"><marquee className="rounded-b-[30px]">Get 35% discount on new book buying...</marquee></div>
-            <div className=" hero py-10">
+        <div className=' bg-gradient-to-r from-secondary to-blue-500 border-y-[10px] border-primary'>
+            <div className="h-14 bg-primary mb-0 flex items-center text-3xl font-bold text-secondary w-4/5 md:w-3/5 p-4  m-auto rounded-b-[30px] "><marquee className="rounded-b-[30px] p-4 mb-2">Get 35% discount on new book buying...</marquee></div>
+            <div className=" hero py-8">
 
                 <div className="hero-content flex-col md:flex-row-reverse">
                     {/* <img src="https://images.unsplash.com/photo-1609530029590-b2dc0e8faf90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJvb2slMjBzZWxsZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" className="w-1/2 rounded-lg shadow-2xl" alt=''/> */}
