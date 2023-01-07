@@ -5,27 +5,33 @@ import BookingModal from './BookingModal';
 const CategoryBookscard = ({book, setModalOpen}) => {
     // console.log(book);
     return (
-        <div className="hero m-4 bg-violet-200 shadow-xl">
-            <div className="hero-content flex-col lg:flex-row">
-                <img src={book.bookImage} className=" rounded-lg shadow-2xl" alt='' />
-                <div>
-                    <h1 className="text-5xl font-bold">{book.bookName}</h1>
-                    <h3 className="font-bold">By{book.writer}</h3>
-                    <p className=""> Buying Price was {book.originalPrice} tk.</p>
-                    <p className="">Selling Price: {book.resalePrice}</p>
+        <div className="card sm:card-side bg-base-200 shadow-xl border-[2px] border-primary">
+            <figure className='h-[300px] lg:w-3/5 border-4 border-base-300'>
+                <img className='w-full  h-full' src={book.bookImage} alt="Album" />
+            </figure>
+            <div className="card-body w-full p-4 lg:border-l-[2px] border-primary">
+                <h2 className="card-title text-primary">{book?.bookName}</h2>
+                <p>{book?.writer !== '' || book?.writer !== undefined ? `By ${book?.writer}` : "Writer name not given"}</p>
+                <p className=''>{book?.category}</p>
 
-                    <p className="">Used time: {book.yearsOfUse}yrs</p>
-                    
-                    <label onClick={()=>setModalOpen({...book, open: true})} htmlFor="booking-modal" className="btn btn-primary text-white">
+                <div>
+                    <p>Buying Price: {book?.originalPrice
+                    } tk</p>
+                    <p>Condition: {book?.yearsOfUse} yrs Used</p>
+                </div>
+
+                <div>
+
+                    <p>Price: <strong>{book?.resalePrice}</strong> tk only</p>
+                </div>
+                <div className="card-actions justify-end">
+                    <button className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">Book Now</button>
+
+                    <label onClick={() => setModalOpen({ ...book, open: true })} htmlFor="booking-modal" className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
                         Book Now
                     </label>
-
-
                 </div>
             </div>
-            {/* <BookingModal
-            book={book}
-            ></BookingModal> */}
         </div>
     );
 };
