@@ -25,14 +25,14 @@ const AllUsers = () => {
                 toast.success('set as admin');
                 refetch()
             }
-            console.log(data)
+            // console.log(data)
         })
     }
     return (
-        <div>
-            <h2 className='text-2xl font-bold text-primary'>All Users</h2>
+        <div className='bg-blue-100'>
+            <h2 className='text-3xl font-bold text-primary text-center p-6'>All Users</h2>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-full mx-3">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

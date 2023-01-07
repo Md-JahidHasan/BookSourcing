@@ -15,46 +15,37 @@ const MyOrders = () => {
     }) 
     console.log({myOrders});
     return (
-        <div>
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    {/* <!-- head --> */}
-                    <thead>
-                        <tr>
-                            <th className='text-center'>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {/* <!-- row 1 --> */}
+        <div className='bg-secondary'>
+            <h1 className='text-center text-3xl font-bold text-primary p-4'>My Orders</h1>
+            <div className=" grid gap-2 p-4">
+    
+                        {/* <!----------- Order Cart ----------> */}
                         {
-                            myOrders.map((order, index) => <tr
-                            key={index}
-                            >
-                                <td>
-                                    <div className="flex items-center space-x-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-18 h-18">
-                                                <img src={order.img} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="font-bold">{order.productName}</div>
-                                            <div className="text-sm opacity-50">United States</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>{order.productPrice}Tk only</td>
-                                <th>
-                                    <button className="btn btn-success btn-xs">Pay Now</button>
-                                </th>
-                            </tr>)
-                        }
+                            myOrders.map((order, index) => <div className="card sm:card-side bg-base-200 shadow-xl border-[1px] border-primary">
+                                <figure className='h-[200px] lg:w-3/5 border-4 border-base-300'>
+                                    <img className='w-full  h-full' src={order.img} alt="Album" />
+                                </figure>
+                                <div className="card-body w-full p-4 lg:border-l-[1px] border-primary">
+                                    <h2 className="card-title text-primary">{order?.productName}</h2>
+                                    <h5 className=''>{order?.category}</h5>
 
-                    </tbody>
-                </table>
+                                    <div>
+                                        <p>Condition: {order?.yearsOfUse} yrs Used</p>
+                                    </div>
+
+                                    <div>
+
+                                        <p>Price: <strong>{order?.productPrice}</strong> tk </p>
+                                    </div>
+                                    <div className="card-actions justify-end">
+
+                                        <label className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
+                                            Pay Now
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>)
+                        }
             </div>
         </div>
     );

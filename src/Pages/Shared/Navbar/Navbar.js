@@ -24,7 +24,7 @@ const Navbar = () => {
         {
             user?.uid ? 
             <>
-                    <li><Link className='border-2 border-primary hover:border-2 rounded-lg hover:border-secondary hover:text-secondary' to='/dashboard'>Dashbord</Link></li>
+                    <li><Link className='border-2 border-primary hover:border-2 rounded-lg hover:border-secondary hover:text-secondary' to='/dashboard/myOrders'>Dashbord</Link></li>
 
                     <li><button className='border-2 border-primary hover:border-2 rounded-lg hover:border-secondary hover:text-secondary' onClick={handleLogOut}>Log Out</button></li>
             </>

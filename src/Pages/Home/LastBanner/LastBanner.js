@@ -2,8 +2,8 @@ import React from 'react';
 
 const LastBanner = () => {
     return (
-        <div className='mt-16 mb-8'>
-            <div className="carousel carousel-center w-full p-4 space-x-4 bg-neutral rounded-box">
+        <div className='py-14 px-8 bg-[url("https://images.unsplash.com/photo-1630734277859-c00925b841e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80")] bg-fixed bg-cover'>
+            <div className="carousel carousel-center w-full p-4 space-x-4 bg-secondary rounded-box">
                 <div className="carousel-item">
                     <img src="https://images.unsplash.com/photo-1502126829571-83575bb53030?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fGJvb2slMjBzZWxsZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" className="rounded-box" alt=''/>
                 </div>

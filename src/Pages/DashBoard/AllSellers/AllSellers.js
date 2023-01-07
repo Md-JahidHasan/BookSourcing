@@ -10,12 +10,12 @@ const AllSellers = () => {
             return data
         }
     })
-    console.log(sellers);
+    // console.log(sellers);
     return (
-        <div>
-            <h1 className='text-3xl font-bold p-3 bg-indigo-300'>All Sellers</h1>
+        <div className='bg-pink-200'>
+            <h1 className='text-3xl font-bold p-6 text-primary  text-center'>All Sellers</h1>
             <div className="overflow-x-auto">
-                <table className="table w-full m-4">
+                <table className="table w-full mx-4">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
@@ -35,7 +35,7 @@ const AllSellers = () => {
                                 <th>{index+1}</th>
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
-                                <td><button>Delete</button></td>
+                                <td><button className='btn btn-xs bg-red-700 text-white border-none text-xs'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>
