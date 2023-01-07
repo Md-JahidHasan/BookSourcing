@@ -25,7 +25,7 @@ const CategoryBookscard = ({book, setModalOpen}) => {
                     <p>Price: <strong>{book?.resalePrice}</strong> tk only</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">Book Now</button>
+                    
 
                     <label onClick={() => setModalOpen({ ...book, open: true })} htmlFor="booking-modal" className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
                         Book Now

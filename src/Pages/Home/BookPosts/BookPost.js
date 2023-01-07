@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BookPost = ({bookPost}) => {
+const BookPost = ({bookPost, setModalOpen}) => {
     console.log(bookPost);
     // const {_id, bookName} = bookPost;
     return (
@@ -24,7 +24,10 @@ const BookPost = ({bookPost}) => {
                     <p>Price: <strong>{bookPost?.resalePrice}</strong> tk only</p>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">Book Now</button>
+
+                    <label onClick={() => setModalOpen({ ...bookPost, open: true })} htmlFor="booking-modal" className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
+                        Book Now
+                    </label>
                 </div>
             </div>
         </div>

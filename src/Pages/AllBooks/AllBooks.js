@@ -1,8 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useState } from 'react';
 import AllBook from './AllBook';
+import BookingModal from './BookingModal';
 
 const AllBooks = () => {
+    const [modalOpen, setModalOpen] = useState({});
     const { data: bookPosts = [], isLoading, refetch } = useQuery({
         queryKey: ['bookPosts'],
         queryFn: async () => {
@@ -19,7 +22,14 @@ const AllBooks = () => {
                     bookPosts.map((bookPost, i) => <AllBook
                         key={i}
                         bookPost={bookPost}
+                        setModalOpen={setModalOpen}
                     ></AllBook>)
+                }
+                {
+                    modalOpen.open && <BookingModal
+                        modalOpen={modalOpen}
+                        setModalOpen={setModalOpen}
+                    ></BookingModal>
                 }
             </div>
         </div>
