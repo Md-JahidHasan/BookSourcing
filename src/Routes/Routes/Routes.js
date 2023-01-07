@@ -58,12 +58,12 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path:'/dashboard/myOrders',
+        path:'/dashboard',
         element: <PrivateRoute><DashbordLayout></DashbordLayout></PrivateRoute>,
         errorElement:<DisplayError></DisplayError>,
         children:[
             {
-                path:'/dashboard/myOrders',
+                path:'/dashboard',
                 element: <MyOrders></MyOrders>
             },
             {
