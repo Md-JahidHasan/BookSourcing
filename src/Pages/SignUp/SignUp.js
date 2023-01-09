@@ -72,6 +72,7 @@ const SignUp = () => {
         providerLogIn()
         .then(result=>{
             const user = result.user;
+            navigte('/')
         }).catch(err=>{
             console.error(err);
         })

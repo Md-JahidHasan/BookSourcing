@@ -46,6 +46,7 @@ const Login = () => {
         providerLogIn()
         .then(result=>{
             const user = result.user;
+            navigate(from, { replace: true })
         }).catch(err=>{
             console.error(err);
         })
