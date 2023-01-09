@@ -1,7 +1,15 @@
 import React from 'react';
+import { useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const AllBook = ({bookPost, setModalOpen}) => {
     
+    const { user } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
     return (
         <div className="card lg:card-side bg-base-200 shadow-xl border-[1px] border-primary">
             <figure className='h-[300px] lg:w-3/5 border-4 border-base-300'>
@@ -24,7 +32,7 @@ const AllBook = ({bookPost, setModalOpen}) => {
                 </div>
                 <div className="card-actions justify-end">
 
-                    <label onClick={() => setModalOpen({ ...bookPost, open: true })} htmlFor="booking-modal" className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
+                    <label onClick={() => setModalOpen( user ? { ...bookPost, open: true } : navigate('/login') )} htmlFor="booking-modal" className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
                         Book Now
                     </label>
                 </div>

@@ -1,6 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookPost = ({bookPost, setModalOpen}) => {
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate()
     console.log(bookPost);
     // const {_id, bookName} = bookPost;
     return (
@@ -25,7 +30,11 @@ const BookPost = ({bookPost, setModalOpen}) => {
                 </div>
                 <div className="card-actions justify-end">
 
-                    <label onClick={() => setModalOpen({ ...bookPost, open: true })} htmlFor="booking-modal" className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold">
+                    <label 
+                    onClick={() => setModalOpen( user ? { ...bookPost, open: true } : navigate('/login') )} 
+                    htmlFor="booking-modal" 
+                    className="btn btn-sm bg-secondary text-primary border-none hover:bg-primary hover:text-secondary hover:font-bold"
+                    >
                         Book Now
                     </label>
                 </div>

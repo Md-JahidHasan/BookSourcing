@@ -94,7 +94,7 @@ const Login = () => {
                     <input className="btn btn-primary mt-4 w-full text-white" type="submit" value="LogIn" />
                 </form>
 
-                <p className="my-2">New to Doctors Portal? <Link className="text-secondary" to='/signup'>Create New Account</Link></p>
+                <p className="my-2">New to BookSourcing? <Link className="text-secondary" to='/signup'>Create New Account</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleProviderLogin} className=" btn text-white w-full">Continue With Google</button>
             </div>

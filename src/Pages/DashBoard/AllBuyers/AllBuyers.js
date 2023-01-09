@@ -12,10 +12,10 @@ const AllBuyers = () => {
     })
     console.log('buyers',buyers);
     return (
-        <div className='bg-secondary'>
+        <div className='bg-secondary min-h-screen'>
             <h1 className='text-center p-6 text-3xl font-bold text-primary'>All Buyers</h1>
             <div className="overflow-x-auto">
-                <table className="table w-full mx-2">
+                <table className="table w-full mx-2 mb-8">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

@@ -15,7 +15,7 @@ const MyOrders = () => {
     }) 
     console.log({myOrders});
     return (
-        <div className='bg-secondary'>
+        <div className='bg-secondary min-h-screen'>
             <h1 className='text-center text-3xl font-bold text-primary p-4'>My Orders</h1>
             <div className=" grid gap-2 p-4">
     
