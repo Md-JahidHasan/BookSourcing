@@ -5,12 +5,15 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
     const { register, formState:{errors}, handleSubmit } = useForm();
-    const { logInUser, user } = useContext(AuthContext);
+    const { logInUser, user, providerLogIn } = useContext(AuthContext);
     const [logInError, setLogInError] = useState('');
+
+
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || '/';
-    console.log(location.state?.from?.pathname);
+
+
     
     const handelLoginSubmit =(data)=>{
         setLogInError('')
@@ -26,6 +29,8 @@ const Login = () => {
             setLogInError(error.message)
         })
     }
+
+
     const getAccessToken = (email)=>{
         fetch(`https://twelfth-assignment-server.vercel.app/jwt?email=${email}`)
         .then(res=>res.json())
@@ -34,6 +39,15 @@ const Login = () => {
             if (data.accessToken){
                 localStorage.setItem('accessToken', data.accessToken)
             }
+        })
+    }
+
+    const handleProviderLogin = ()=>{
+        providerLogIn()
+        .then(result=>{
+            const user = result.user;
+        }).catch(err=>{
+            console.error(err);
         })
     }
 
@@ -81,7 +95,7 @@ const Login = () => {
 
                 <p className="my-2">New to Doctors Portal? <Link className="text-secondary" to='/signup'>Create New Account</Link></p>
                 <div className="divider">OR</div>
-                <button className=" btn text-white w-full">Continue With Google</button>
+                <button onClick={handleProviderLogin} className=" btn text-white w-full">Continue With Google</button>
             </div>
         </div>
     );
