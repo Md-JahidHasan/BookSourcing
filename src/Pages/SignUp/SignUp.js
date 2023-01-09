@@ -7,9 +7,12 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const SignUp = () => {
     const {register,formState:{errors} , handleSubmit} = useForm();
     const [seller, setSeller] = useState(false);
-    // console.log(seller);
-    const { creatUser, updateUser } = useContext(AuthContext);
-    const navigte = useNavigate()
+
+    const { creatUser, updateUser, providerLogIn } = useContext(AuthContext);
+
+    const navigte = useNavigate();
+
+
     const handleSignUp = (data)=>{
         creatUser(data.email, data.password)
         .then(result=>{
@@ -32,6 +35,7 @@ const SignUp = () => {
             console.error(error)
         })
     }
+
 
     const handleUserData =(name, email, seller)=>{
         const user = {
@@ -63,6 +67,16 @@ const SignUp = () => {
             }
         })
     }
+
+    const handleProviderLogIn =()=>{
+        providerLogIn()
+        .then(result=>{
+            const user = result.user;
+        }).catch(err=>{
+            console.error(err);
+        })
+    }
+
     return (
         <div className='h-[700px] flex justify-center items-center'>
             <div className=' w-96 text-center'>
@@ -115,7 +129,7 @@ const SignUp = () => {
                 </form>
                 <p className='mt-2'>Already have an account? <Link to='/login' className='text-primary '>Please Login</Link></p>
                 <div className="divider">OR</div>
-                <button className='btn btn-secondary w-full text-white'>Continue With GOOGLE</button>
+                <button onClick={handleProviderLogIn} className='btn btn-secondary w-full text-white'>Continue With GOOGLE</button>
 
             </div>
         </div>
