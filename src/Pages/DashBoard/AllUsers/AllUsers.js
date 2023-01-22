@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
+import 'boxicons'
 
 const AllUsers = () => {
     const {data: users=[], refetch} = useQuery({
@@ -39,7 +40,7 @@ const AllUsers = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Admin</th>
+                            <th>Role</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -55,7 +56,7 @@ const AllUsers = () => {
                                     <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>
                                     
                                     }</td>
-                                <td><button className='btn btn-xs bg-red-500 text-white'>Delete</button></td>
+                                <td><button onClick={handleDeleteUser} className='text-red-600 border border-red-700 rounded-full px-1'><i class='bx bxs-trash' ></i></button></td>
                             </tr>)
                         }
                     </tbody>
