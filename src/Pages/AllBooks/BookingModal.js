@@ -7,6 +7,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const BookingModal = ({ refetch, modalOpen, setModalOpen }) => {
     // const { name, slots, price } = treatment;
     const { user } = useContext(AuthContext);
+    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -42,6 +43,7 @@ const BookingModal = ({ refetch, modalOpen, setModalOpen }) => {
                 if (data.acknowledged === true) {
                     toast.success('Your order is Booked!')
                     setModalOpen({ open: false })
+                    refetch()
                 }
             })
     };

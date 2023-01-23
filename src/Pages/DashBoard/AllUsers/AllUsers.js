@@ -2,8 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
 import 'boxicons'
+import DeleteUserModal from './DeleteUserModal';
+import { useState } from 'react';
 
 const AllUsers = () => {
+    const [modalOpen, setModalOpen] = useState({});
     const {data: users=[], refetch} = useQuery({
         queryKey:['users'],
         queryFn: async()=>{
@@ -29,8 +32,25 @@ const AllUsers = () => {
             // console.log(data)
         })
     }
-    return (
+
+    const handleDeleteUser = email =>{
+        console.log('Click', email);
+        fetch(`http://localhost:8000/deleteUser/${email}`, {
+            method:'DELETE',
+            headers:{
+                'content-type': 'application/json'
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            toast.success('User deleted!');
+            refetch()
+        })
+    }
+
+
+        return (
         <div className='bg-blue-100'>
+            
             <h2 className='text-3xl font-bold text-primary text-center p-6'>All Users</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full mx-3">
@@ -48,19 +68,30 @@ const AllUsers = () => {
                         {/* <!-- row 1 --> */}
                         {
                             users.map((user, index) => <tr key={index}>
+                                
                                 <th>{index+1}</th>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
-                                <td>{
+                                <td>
+                                    {
                                     user?.role ? <button  className='bg-green-500 btn btn-xs text-white'>Already Admin</button> :
                                     <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>
-                                    
-                                    }</td>
-                                <td><button onClick={handleDeleteUser} className='text-red-600 border border-red-700 rounded-full px-1'><i class='bx bxs-trash' ></i></button></td>
+                                    }
+                                </td>
+                                <td>
+                                    <label className='text-red-600 border border-red-700 rounded-full p-1' onClick={() => setModalOpen({ ...user, open: true })} htmlFor="my-modal" ><i class='bx bxs-trash' ></i></label>
+                                </td>
+                            
                             </tr>)
                         }
                     </tbody>
                 </table>
+                {
+                    modalOpen.open && <DeleteUserModal
+                    modalOpen={modalOpen}
+                    refetch={refetch}
+                    ></DeleteUserModal>
+                }
             </div>
             
         </div>
