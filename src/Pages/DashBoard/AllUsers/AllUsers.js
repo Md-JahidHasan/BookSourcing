@@ -17,6 +17,7 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin= id =>{
+        console.log('clicked');
         fetch(`https://twelfth-assignment-server.vercel.app/allusers/admin/${id}`, {
             method:'PUT',
             headers:{
@@ -33,19 +34,19 @@ const AllUsers = () => {
         })
     }
 
-    const handleDeleteUser = email =>{
-        console.log('Click', email);
-        fetch(`http://localhost:8000/deleteUser/${email}`, {
-            method:'DELETE',
-            headers:{
-                'content-type': 'application/json'
-            }
-        }).then(res=>res.json())
-        .then(data=>{
-            toast.success('User deleted!');
-            refetch()
-        })
-    }
+    // const handleDeleteUser = email =>{
+    //     console.log('Click', email);
+    //     fetch(`http://localhost:8000/deleteUser/${email}`, {
+    //         method:'DELETE',
+    //         headers:{
+    //             'content-type': 'application/json'
+    //         }
+    //     }).then(res=>res.json())
+    //     .then(data=>{
+    //         toast.success('User deleted!');
+    //         refetch()
+    //     })
+    // }
 
 
         return (
@@ -74,10 +75,11 @@ const AllUsers = () => {
                                 <td>{user.email}</td>
                                 <td>
                                     {
-                                    user?.role ? <button  className='bg-green-500 btn btn-xs text-white'>Already Admin</button> :
+                                    user?.role ? <p  className='text-green-500 font-bold'>Admin</p> :
                                     <button onClick={() => handleMakeAdmin(user._id)} className='btn btn-xs btn-primary'>Make Admin</button>
                                     }
                                 </td>
+                                
                                 <td>
                                     <label className='text-red-600 border border-red-700 rounded-full p-1' onClick={() => setModalOpen({ ...user, open: true })} htmlFor="my-modal" ><i class='bx bxs-trash' ></i></label>
                                 </td>

@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 const DeleteUserModal = ({modalOpen, refetch}) => {
     const handleDeleteUser = email => {
         console.log('Click', email);
-        fetch(`http://localhost:8000/deleteUser/${email}`, {
+        fetch(`https://twelfth-assignment-server.vercel.app/deleteUser/${email}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'
